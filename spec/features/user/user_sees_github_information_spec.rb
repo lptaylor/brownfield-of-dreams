@@ -2,9 +2,9 @@ require 'rails_helper'
 
 describe User do
   before(:each) do
-    VCR.use_cassette('repository_list_test') do
+    VCR.use_cassette('repository_data') do
       @user = create(:user)
-
+      @repositories = RepositoryListResult.user_repository_list
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@user)
       visit '/dashboard'
     end
@@ -17,8 +17,9 @@ describe User do
 
   it 'lists 5 repositories with each name being a link to that repository' do
     within '.github' do
-      within '#repository-1' do
-        expect(page).to have_content()
+      within "#repository-#{@repositories[0].id}" do
+        expect(page).to have_content("#{@repositories[0].name}")
+        expect(page).to have_link("#{@repositories[0].name}")
       end
     end
   end
