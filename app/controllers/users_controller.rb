@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   def show
+    @repositories= RepositoryListResult.user_repository_list.sample(5)
   end
 
   def new
