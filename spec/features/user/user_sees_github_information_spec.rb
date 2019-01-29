@@ -2,23 +2,23 @@ require 'rails_helper'
 
 describe User do
   before(:each) do
-    @user = create(:user)
+    VCR.use_cassette('repository_list_test') do
+      @user = create(:user)
 
-    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@user)
-    visit '/dashboard'
-
+      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@user)
+      visit '/dashboard'
+    end
   end
   it 'shows a section for Github' do
     within '.github' do
       expect(page).to have_content('Github')
-
     end
   end
 
   it 'lists 5 repositories with each name being a link to that repository' do
     within '.github' do
       within '#repository-1' do
-        click_link 
+        expect(page).to have_content()
       end
     end
   end
