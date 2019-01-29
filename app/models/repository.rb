@@ -1,7 +1,8 @@
 class Repository
-  attr_reader :name, :url
+  attr_reader :name, :html_url, :id
   def initialize(attributes)
+    @id = attributes[:id]
     @name = attributes[:name]
-    @url = attributes[:url]
+    @html_url = attributes[:html_url]
   end
 end
