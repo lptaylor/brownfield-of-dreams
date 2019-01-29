@@ -12,6 +12,9 @@
   </section>
   <div class="github">
     <h3>Github</h3>
-
+    <% @repositories.each do |repo| %>
+      <div id="repository-<%= repo.id %>">
+        <%= link_to repo.name, repo.url %>
+      </div>
   </div>
 </section>

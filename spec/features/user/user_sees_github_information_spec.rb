@@ -14,6 +14,16 @@ describe User do
 
     end
   end
+
+  it 'lists 5 repositories with each name being a link to that repository' do
+    within '.github' do
+      within '#repository-1' do
+        click_link 
+      end
+    end
+  end
+
+
 end
 # As a logged in user
 # When I visit /dashboard
