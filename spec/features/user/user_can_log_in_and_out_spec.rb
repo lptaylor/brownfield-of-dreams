@@ -15,7 +15,6 @@ describe 'User' do
       fill_in 'session[password]', with: user.password
 
       click_on 'Log In'
-
       expect(current_path).to eq(dashboard_path)
       expect(page).to have_content(user.email)
       expect(page).to have_content(user.first_name)
@@ -24,8 +23,8 @@ describe 'User' do
   end
 
   it 'can log out', :js do
-    VCR.use_cassette('repository_list_test') do
-      user = create(:user)
+    VCR.use_cassette('non_token') do
+      user = create(:user, token: nil)
 
       visit login_path
 
@@ -35,7 +34,6 @@ describe 'User' do
       click_on 'Log In'
 
       click_on 'Profile'
-
       expect(current_path).to eq(dashboard_path)
 
       click_on 'Log Out'
