@@ -14,7 +14,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'sprockets-es6'
 
 gem 'webpacker', '~> 3.5'
-
+gem 'bundler'
 gem 'yt', '~> 0.29.1'
 gem 'google-api-client'
 gem 'faraday'
