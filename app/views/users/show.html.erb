@@ -10,12 +10,21 @@
   <section>
     <h1>Bookmarked Segments</h1>
   </section>
+
   <div class="github">
     <h3>Github</h3>
-    <% @repositories.each do |repo| %>
-      <div id="repository-<%= repo.id %>">
-        <%= link_to repo.name, repo.html_url %>
-      </div>
-    <%end %>
+    <% if current_user.token %>
+      <% if @repositories != nil %>
+        <% @repositories.each do |repo| %>
+          <div id="repository-<%= repo.id %>">
+            <%= link_to repo.name, repo.html_url %>
+          </div>
+          <% end %>
+      <% else %>
+        You don't have any repositories available
+      <%end %>
+    <% else %>
+      <h3>You do not have access to a Github profile</h3>
+    <% end %>
   </div>
 </section>
