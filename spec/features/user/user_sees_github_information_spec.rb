@@ -18,9 +18,11 @@ describe User do
 
   it 'lists 5 repositories with each name being a link to that repository' do
     within '.github' do
-      within "#repository-#{@repositories[0].id}" do
-        expect(page).to have_content("#{@repositories[0].name}")
-        expect(page).to have_link("#{@repositories[0].name}")
+      all('.repository').first do
+        within "#repository-#{@repositories[0].id}" do
+          expect(page).to have_content("#{@repositories[0].name}")
+          expect(page).to have_link("#{@repositories[0].name}")
+        end
       end
     end
   end
