@@ -1,6 +1,8 @@
 class UsersController < ApplicationController
   def show
-    @repositories= RepositoryListResult.user_repository_list.sample(5)
+    @user = current_user
+    repo_list = RepositoryListResultFacade.new(@user)
+    @repositories = repo_list.user_repository_list
   end
 
   def new
