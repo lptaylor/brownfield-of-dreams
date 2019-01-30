@@ -29,19 +29,6 @@ describe User do
 end
 
 describe 'non token or no repos' do
-  it 'shows message if token is missing' do
-    VCR.use_cassette('repository_data') do
-      user = create(:user, token: nil)
-      repo_list = RepositoryListResultFacade.new(user)
-      repositories = repo_list.user_repository_list
-      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
-      visit '/dashboard'
-      within '.github' do
-        expect(page).to have_content("You do not have access to a Github profile")
-      end
-    end
-  end
-
   xit 'shows message if repositories list is 0' do
 
   end
