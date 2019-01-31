@@ -38,7 +38,7 @@ describe 'followers' do
   before(:each) do
     VCR.use_cassette('repository_data') do
       @user = create(:user)
-      followers_data = FollowersListFacade.new(@user)
+      followers_data = FollowerListFacade.new(@user)
       @followers = followers_data.user_followers_list
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@user)
       visit '/dashboard'
