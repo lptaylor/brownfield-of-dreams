@@ -3,6 +3,8 @@ class UsersController < ApplicationController
     @user = current_user
     repo_list = RepositoryListResultFacade.new(@user)
     @repositories = repo_list.user_repository_list
+    follower_list = FollowerListFacade.new(@user)
+    @followers = follower_list.user_followers_list
   end
 
   def new
