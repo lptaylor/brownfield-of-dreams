@@ -21,8 +21,17 @@
           </div>
           <% end %>
       <% else %>
-        You don't have any repositories available
+        <h4>You don't have any repositories available</h4>
       <%end %>
+      <% if @followers != nil %>
+        <% @followers.each do |follower| %>
+          <div id="followers-<%= follower.id %>">
+            <%= link_to follower.handle, follower.html_url %>
+          </div>
+        <% end %>
+      <% else %>
+        <h4>You currently don't have any followers</h4>
+      <% end %>
     <% end %>
   </div>
 </section>
