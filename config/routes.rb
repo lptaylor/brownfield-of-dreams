@@ -29,7 +29,7 @@ Rails.application.routes.draw do
   delete '/logout', to: "sessions#destroy"
 
   get '/email_validation', to: "email_validation#create"
-  # get '/thanks_welcome', to: "email_validation#show"
+  get '/welcome_thanks', to: "email_validation#show"
 
   get '/dashboard', to: 'users#show'
   get '/about', to: 'about#show'
