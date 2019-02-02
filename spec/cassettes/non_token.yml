@@ -21,7 +21,7 @@ http_interactions:
       Server:
       - GitHub.com
       Date:
-      - Thu, 31 Jan 2019 20:10:32 GMT
+      - Fri, 01 Feb 2019 15:33:05 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
@@ -31,9 +31,9 @@ http_interactions:
       X-Ratelimit-Limit:
       - '60'
       X-Ratelimit-Remaining:
-      - '17'
+      - '51'
       X-Ratelimit-Reset:
-      - '1548966748'
+      - '1549038447'
       X-Github-Media-Type:
       - github.v3; format=json
       Access-Control-Expose-Headers:
@@ -55,12 +55,12 @@ http_interactions:
       Content-Security-Policy:
       - default-src 'none'
       X-Github-Request-Id:
-      - F292:0D7D:6B56E3:1113F6E:5C535638
+      - D5F9:0D7B:14DDAA1:2A82CD3:5C5466B1
     body:
       encoding: UTF-8
       string: '{"message":"Requires authentication","documentation_url":"https://developer.github.com/v3/repos/#list-your-repositories"}'
     http_version: 
-  recorded_at: Thu, 31 Jan 2019 20:10:31 GMT
+  recorded_at: Fri, 01 Feb 2019 15:33:02 GMT
 - request:
     method: get
     uri: https://api.github.com/user/followers
@@ -82,7 +82,7 @@ http_interactions:
       Server:
       - GitHub.com
       Date:
-      - Thu, 31 Jan 2019 20:10:33 GMT
+      - Fri, 01 Feb 2019 15:33:06 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
@@ -92,9 +92,9 @@ http_interactions:
       X-Ratelimit-Limit:
       - '60'
       X-Ratelimit-Remaining:
-      - '16'
+      - '50'
       X-Ratelimit-Reset:
-      - '1548966748'
+      - '1549038447'
       X-Github-Media-Type:
       - github.v3; format=json
       Access-Control-Expose-Headers:
@@ -116,12 +116,73 @@ http_interactions:
       Content-Security-Policy:
       - default-src 'none'
       X-Github-Request-Id:
-      - F293:375A:F528A7:1E7B34F:5C535638
+      - D5FA:775A:92FD88:16D9CAE:5C5466B1
     body:
       encoding: UTF-8
       string: '{"message":"Requires authentication","documentation_url":"https://developer.github.com/v3/users/followers/#list-followers-of-a-user"}'
     http_version: 
-  recorded_at: Thu, 31 Jan 2019 20:10:31 GMT
+  recorded_at: Fri, 01 Feb 2019 15:33:03 GMT
+- request:
+    method: get
+    uri: https://api.github.com/user/following
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.4
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 401
+      message: Unauthorized
+    headers:
+      Server:
+      - GitHub.com
+      Date:
+      - Fri, 01 Feb 2019 15:33:06 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '144'
+      Status:
+      - 401 Unauthorized
+      X-Ratelimit-Limit:
+      - '60'
+      X-Ratelimit-Remaining:
+      - '49'
+      X-Ratelimit-Reset:
+      - '1549038447'
+      X-Github-Media-Type:
+      - github.v3; format=json
+      Access-Control-Expose-Headers:
+      - ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining,
+        X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval,
+        X-GitHub-Media-Type
+      Access-Control-Allow-Origin:
+      - "*"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains; preload
+      X-Frame-Options:
+      - deny
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Referrer-Policy:
+      - origin-when-cross-origin, strict-origin-when-cross-origin
+      Content-Security-Policy:
+      - default-src 'none'
+      X-Github-Request-Id:
+      - D5FB:298B:16D90E2:2D93859:5C5466B2
+    body:
+      encoding: UTF-8
+      string: '{"message":"Requires authentication","documentation_url":"https://developer.github.com/v3/users/followers/#list-users-followed-by-another-user"}'
+    http_version: 
+  recorded_at: Fri, 01 Feb 2019 15:33:03 GMT
 - request:
     method: get
     uri: https://api.github.com/user/repos
@@ -143,7 +204,7 @@ http_interactions:
       Server:
       - GitHub.com
       Date:
-      - Thu, 31 Jan 2019 20:10:33 GMT
+      - Fri, 01 Feb 2019 15:33:12 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
@@ -153,9 +214,9 @@ http_interactions:
       X-Ratelimit-Limit:
       - '60'
       X-Ratelimit-Remaining:
-      - '15'
+      - '48'
       X-Ratelimit-Reset:
-      - '1548966748'
+      - '1549038447'
       X-Github-Media-Type:
       - github.v3; format=json
       Access-Control-Expose-Headers:
@@ -177,12 +238,12 @@ http_interactions:
       Content-Security-Policy:
       - default-src 'none'
       X-Github-Request-Id:
-      - F298:775C:104F006:1F9A3E2:5C535639
+      - D600:3759:8FA73D:16EA2E6:5C5466B8
     body:
       encoding: UTF-8
       string: '{"message":"Requires authentication","documentation_url":"https://developer.github.com/v3/repos/#list-your-repositories"}'
     http_version: 
-  recorded_at: Thu, 31 Jan 2019 20:10:31 GMT
+  recorded_at: Fri, 01 Feb 2019 15:33:09 GMT
 - request:
     method: get
     uri: https://api.github.com/user/followers
@@ -204,7 +265,7 @@ http_interactions:
       Server:
       - GitHub.com
       Date:
-      - Thu, 31 Jan 2019 20:10:33 GMT
+      - Fri, 01 Feb 2019 15:33:12 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
@@ -214,9 +275,9 @@ http_interactions:
       X-Ratelimit-Limit:
       - '60'
       X-Ratelimit-Remaining:
-      - '14'
+      - '47'
       X-Ratelimit-Reset:
-      - '1548966748'
+      - '1549038447'
       X-Github-Media-Type:
       - github.v3; format=json
       Access-Control-Expose-Headers:
@@ -238,10 +299,71 @@ http_interactions:
       Content-Security-Policy:
       - default-src 'none'
       X-Github-Request-Id:
-      - F299:3954:ED1667:1E50DD0:5C535639
+      - D601:4138:15C06FE:2AFEC25:5C5466B8
     body:
       encoding: UTF-8
       string: '{"message":"Requires authentication","documentation_url":"https://developer.github.com/v3/users/followers/#list-followers-of-a-user"}'
     http_version: 
-  recorded_at: Thu, 31 Jan 2019 20:10:32 GMT
+  recorded_at: Fri, 01 Feb 2019 15:33:09 GMT
+- request:
+    method: get
+    uri: https://api.github.com/user/following
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.4
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 401
+      message: Unauthorized
+    headers:
+      Server:
+      - GitHub.com
+      Date:
+      - Fri, 01 Feb 2019 15:33:13 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '144'
+      Status:
+      - 401 Unauthorized
+      X-Ratelimit-Limit:
+      - '60'
+      X-Ratelimit-Remaining:
+      - '46'
+      X-Ratelimit-Reset:
+      - '1549038447'
+      X-Github-Media-Type:
+      - github.v3; format=json
+      Access-Control-Expose-Headers:
+      - ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining,
+        X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval,
+        X-GitHub-Media-Type
+      Access-Control-Allow-Origin:
+      - "*"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains; preload
+      X-Frame-Options:
+      - deny
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Referrer-Policy:
+      - origin-when-cross-origin, strict-origin-when-cross-origin
+      Content-Security-Policy:
+      - default-src 'none'
+      X-Github-Request-Id:
+      - D602:0F97:10CDF2D:244A590:5C5466B9
+    body:
+      encoding: UTF-8
+      string: '{"message":"Requires authentication","documentation_url":"https://developer.github.com/v3/users/followers/#list-users-followed-by-another-user"}'
+    http_version: 
+  recorded_at: Fri, 01 Feb 2019 15:33:09 GMT
 recorded_with: VCR 4.0.0

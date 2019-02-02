@@ -1,21 +1,21 @@
 <section class="dashboard-main">
-  <h1> <%= current_user.first_name %>'s Dashboard </h1>
+  <h1> <%= @user.first_name %>'s Dashboard </h1>
 
   <%= button_to 'Log Out', logout_path, method: 'delete', class: "btn btn-primary mb1 bg-teal" %>
   <h3>Account Details</h3>
   <ul>
-    <li> <%= current_user.first_name  %> <%= current_user.last_name %> </li>
-    <li> <%= current_user.email%> </li>
+    <li> <%= @user.first_name  %> <%= @user.last_name %> </li>
+    <li> <%= @user.email%> </li>
   </ul>
   <section>
     <h1>Bookmarked Segments</h1>
   </section>
 
-    <% if current_user.token %>
+    <% if @user.token %>
     <div class="github">
       <h3>Github</h3>
-      <% if @repositories != nil %>
-        <% @repositories.each do |repo| %>
+      <% if @user.repositories != nil %>
+        <% @user.repositories.each do |repo| %>
           <div id="repository-<%= repo.id %>">
             <%= link_to repo.name, repo.html_url %>
           </div>
@@ -23,8 +23,8 @@
       <% else %>
         <h4>You don't have any repositories available</h4>
       <%end %>
-      <% if @followers != nil %>
-        <% @followers.each do |follower| %>
+      <% if @user.followers != nil %>
+        <% @user.followers.each do |follower| %>
           <div id="followers-<%= follower.id %>">
             <%= link_to follower.handle, follower.html_url %>
           </div>
