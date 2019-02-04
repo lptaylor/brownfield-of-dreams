@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe 'User' do
   it 'can see bookmarked videos' do
-    VCR.use_cassette('tutorial bookmarks') do
+    VCR.use_cassette('tutorial_bookmarks') do
       user = create(:user)
 
       allow_any_instance_of(ApplicationController).to receive(:current_user) {user}
@@ -21,7 +21,7 @@ RSpec.describe 'User' do
 
       expect(page).to have_content("Bookmarked Segments")
 
-      within all('.bookmark')[0] do
+      within all(".bookmark")[0] do
         expect(page).to have_content(video_1.title)
       end
 

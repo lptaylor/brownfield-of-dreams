@@ -9,7 +9,14 @@
   </ul>
   <section>
     <h1>Bookmarked Segments</h1>
+    <% @user.bookmarks.each do |video| %>
+      <div class="bookmark">
+        <%= video.title  %>
+      </div>
+    <% end %>
   </section>
+
+
     <% if @user.token %>
     <div class="github">
       <h3>Github</h3>
