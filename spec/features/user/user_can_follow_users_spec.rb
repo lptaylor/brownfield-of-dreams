@@ -12,26 +12,26 @@ describe 'as a user' do
   end
   it 'shows a link to follow another user who is following user' do
     within '.github' do
-      within "#followers-#{@user_1.followers[4].id}" do
+      within "#followers-#{@user_1.followers[4].uid}" do
         expect(page).to have_link("Follow This User")
       end
     end
   end
   it 'shows a link to follow another user who user is following' do
     within '.github' do
-      within "#following-#{@user_1.following[1].id}" do
+      within "#following-#{@user_1.following[1].uid}" do
         expect(page).to have_link("Follow This User")
       end
     end
   end
   it 'will not show link if user is not a registered user in the app' do
     within '.github' do
-      within "#following-#{@user_1.following[0].id}" do
+      within "#following-#{@user_1.following[0].uid}" do
         expect(page).to_not have_link("Follow This User")
       end
     end
     within '.github' do
-      within "#followers-#{@user_1.followers[1].id}" do
+      within "#followers-#{@user_1.followers[1].uid}" do
         expect(page).to_not have_link("Follow This User")
       end
     end

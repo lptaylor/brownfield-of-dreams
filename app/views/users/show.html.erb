@@ -15,7 +15,7 @@
       <h3>Github</h3>
       <% if @user.repositories != nil %>
         <% @user.repositories.each do |repo| %>
-          <div id="repository-<%= repo.id %>">
+          <div id="repository">
             <%= link_to repo.name, repo.html_url %>
           </div>
           <% end %>
@@ -24,7 +24,7 @@
       <%end %>
       <% if @user.followers != nil %>
         <% @user.followers.each do |follower| %>
-          <div id="followers-<%= follower.id %>">
+          <div id="followers-<%= follower.uid %>">
             <%= link_to follower.handle, follower.html_url %>
             <% if follower.exists? %>
               <%= link_to "Follow This User" %>
@@ -36,7 +36,7 @@
       <% end %>
       <% if @user.following != nil %>
         <% @user.following.each do |followed| %>
-          <div id="following-<%= followed.id %>">
+          <div id="following-<%= followed.uid %>">
             <%= link_to followed.handle, followed.html_url %>
             <% if followed.exists? %>
               <%= link_to "Follow This User" %>
