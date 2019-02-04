@@ -1,10 +1,6 @@
 class RepositoryListResultFacade
-  def initialize(current_user)
-    @user = current_user
-  end
-
-  def user_repository_list
-    data = GithubService.new(@user)
+  def self.user_repository_list(current_user)
+    data = GithubService.new(current_user)
     repository_data = data.user_repositories
     if repository_data.first.include?(:id)
       repository_data.map do |repo_data|

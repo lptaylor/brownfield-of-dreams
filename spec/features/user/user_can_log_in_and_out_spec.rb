@@ -2,9 +2,8 @@ require 'rails_helper'
 
 describe 'User' do
   it 'user can sign in' do
-    VCR.use_cassette('repository_list_test') do
+    VCR.use_cassette('github_api_data_sign_in') do
       user = create(:user)
-
       visit '/'
 
       click_on "Sign In"
@@ -45,7 +44,7 @@ describe 'User' do
   end
 
   it 'is shown an error when incorrect info is entered' do
-    VCR.use_cassette('repository_list_test') do
+    VCR.use_cassette('github_api_data') do
       user = create(:user)
       fake_email = "email@email.com"
       fake_password = "123"
