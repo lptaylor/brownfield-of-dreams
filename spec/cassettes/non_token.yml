@@ -23,7 +23,7 @@ http_interactions:
       Server:
       - GitHub.com
       Date:
-      - Mon, 04 Feb 2019 20:33:37 GMT
+      - Mon, 04 Feb 2019 22:35:20 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
@@ -35,9 +35,9 @@ http_interactions:
       X-Ratelimit-Limit:
       - '60'
       X-Ratelimit-Remaining:
-      - '0'
+      - '27'
       X-Ratelimit-Reset:
-      - '1549313633'
+      - '1549321414'
       Access-Control-Expose-Headers:
       - ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining,
         X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval,
@@ -57,12 +57,12 @@ http_interactions:
       Content-Security-Policy:
       - default-src 'none'
       X-Github-Request-Id:
-      - DB5F:6C2D:476CCB:BBC6CD:5C58A1A0
+      - F8EB:4AE2:F77121:21F8D8F:5C58BE28
     body:
       encoding: UTF-8
       string: '{"message":"Bad credentials","documentation_url":"https://developer.github.com/v3"}'
     http_version: 
-  recorded_at: Mon, 04 Feb 2019 20:33:37 GMT
+  recorded_at: Mon, 04 Feb 2019 22:35:20 GMT
 - request:
     method: get
     uri: https://api.github.com/user/followers
@@ -86,7 +86,7 @@ http_interactions:
       Server:
       - GitHub.com
       Date:
-      - Mon, 04 Feb 2019 20:33:37 GMT
+      - Mon, 04 Feb 2019 22:35:20 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
@@ -98,9 +98,9 @@ http_interactions:
       X-Ratelimit-Limit:
       - '60'
       X-Ratelimit-Remaining:
-      - '0'
+      - '26'
       X-Ratelimit-Reset:
-      - '1549313633'
+      - '1549321414'
       Access-Control-Expose-Headers:
       - ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining,
         X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval,
@@ -120,12 +120,12 @@ http_interactions:
       Content-Security-Policy:
       - default-src 'none'
       X-Github-Request-Id:
-      - DB60:304B:1492009:2965CA2:5C58A1A1
+      - F8EC:1D29:142A27B:2A8902F:5C58BE28
     body:
       encoding: UTF-8
       string: '{"message":"Bad credentials","documentation_url":"https://developer.github.com/v3"}'
     http_version: 
-  recorded_at: Mon, 04 Feb 2019 20:33:37 GMT
+  recorded_at: Mon, 04 Feb 2019 22:35:20 GMT
 - request:
     method: get
     uri: https://api.github.com/user/following
@@ -149,7 +149,7 @@ http_interactions:
       Server:
       - GitHub.com
       Date:
-      - Mon, 04 Feb 2019 20:33:37 GMT
+      - Mon, 04 Feb 2019 22:35:20 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
@@ -161,9 +161,9 @@ http_interactions:
       X-Ratelimit-Limit:
       - '60'
       X-Ratelimit-Remaining:
-      - '0'
+      - '25'
       X-Ratelimit-Reset:
-      - '1549313633'
+      - '1549321414'
       Access-Control-Expose-Headers:
       - ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining,
         X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval,
@@ -183,12 +183,12 @@ http_interactions:
       Content-Security-Policy:
       - default-src 'none'
       X-Github-Request-Id:
-      - DB61:3DFF:13B21A1:26CC0E4:5C58A1A1
+      - F8ED:23F4:1110205:23E7C59:5C58BE28
     body:
       encoding: UTF-8
       string: '{"message":"Bad credentials","documentation_url":"https://developer.github.com/v3"}'
     http_version: 
-  recorded_at: Mon, 04 Feb 2019 20:33:37 GMT
+  recorded_at: Mon, 04 Feb 2019 22:35:20 GMT
 - request:
     method: get
     uri: https://api.github.com/user/repos
@@ -212,7 +212,7 @@ http_interactions:
       Server:
       - GitHub.com
       Date:
-      - Mon, 04 Feb 2019 20:33:37 GMT
+      - Mon, 04 Feb 2019 22:35:21 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
@@ -224,9 +224,9 @@ http_interactions:
       X-Ratelimit-Limit:
       - '60'
       X-Ratelimit-Remaining:
-      - '0'
+      - '24'
       X-Ratelimit-Reset:
-      - '1549313633'
+      - '1549321414'
       Access-Control-Expose-Headers:
       - ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining,
         X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval,
@@ -246,12 +246,12 @@ http_interactions:
       Content-Security-Policy:
       - default-src 'none'
       X-Github-Request-Id:
-      - DB66:4281:137E5C5:284920D:5C58A1A1
+      - F8F2:3E5E:10D4FF2:24004C2:5C58BE28
     body:
       encoding: UTF-8
       string: '{"message":"Bad credentials","documentation_url":"https://developer.github.com/v3"}'
     http_version: 
-  recorded_at: Mon, 04 Feb 2019 20:33:37 GMT
+  recorded_at: Mon, 04 Feb 2019 22:35:21 GMT
 - request:
     method: get
     uri: https://api.github.com/user/followers
@@ -275,7 +275,7 @@ http_interactions:
       Server:
       - GitHub.com
       Date:
-      - Mon, 04 Feb 2019 20:33:38 GMT
+      - Mon, 04 Feb 2019 22:35:21 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
@@ -287,9 +287,9 @@ http_interactions:
       X-Ratelimit-Limit:
       - '60'
       X-Ratelimit-Remaining:
-      - '0'
+      - '23'
       X-Ratelimit-Reset:
-      - '1549313633'
+      - '1549321414'
       Access-Control-Expose-Headers:
       - ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining,
         X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval,
@@ -309,12 +309,12 @@ http_interactions:
       Content-Security-Policy:
       - default-src 'none'
       X-Github-Request-Id:
-      - DB67:2C19:1297252:26CDC15:5C58A1A1
+      - F8F3:6C2D:49E724:C21294:5C58BE29
     body:
       encoding: UTF-8
       string: '{"message":"Bad credentials","documentation_url":"https://developer.github.com/v3"}'
     http_version: 
-  recorded_at: Mon, 04 Feb 2019 20:33:38 GMT
+  recorded_at: Mon, 04 Feb 2019 22:35:21 GMT
 - request:
     method: get
     uri: https://api.github.com/user/following
@@ -338,7 +338,7 @@ http_interactions:
       Server:
       - GitHub.com
       Date:
-      - Mon, 04 Feb 2019 20:33:38 GMT
+      - Mon, 04 Feb 2019 22:35:21 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
@@ -350,9 +350,9 @@ http_interactions:
       X-Ratelimit-Limit:
       - '60'
       X-Ratelimit-Remaining:
-      - '0'
+      - '22'
       X-Ratelimit-Reset:
-      - '1549313633'
+      - '1549321414'
       Access-Control-Expose-Headers:
       - ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining,
         X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval,
@@ -372,10 +372,10 @@ http_interactions:
       Content-Security-Policy:
       - default-src 'none'
       X-Github-Request-Id:
-      - DB69:156A:92CCBE:163458F:5C58A1A2
+      - F8F4:436F:14A82F7:29ADA2D:5C58BE29
     body:
       encoding: UTF-8
       string: '{"message":"Bad credentials","documentation_url":"https://developer.github.com/v3"}'
     http_version: 
-  recorded_at: Mon, 04 Feb 2019 20:33:38 GMT
+  recorded_at: Mon, 04 Feb 2019 22:35:21 GMT
 recorded_with: VCR 4.0.0
