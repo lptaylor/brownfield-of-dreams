@@ -10,7 +10,6 @@
   <section>
     <h1>Bookmarked Segments</h1>
   </section>
-
     <% if @user.token %>
     <div class="github">
       <h3>Github</h3>
@@ -32,6 +31,17 @@
       <% else %>
         <h4>You currently don't have any followers</h4>
       <% end %>
+      <% if @user.following != nil %>
+        <% @user.following.each do |followed| %>
+          <div id="followers-<%= followed.id %>">
+            <%= link_to followed.handle, followed.html_url %>
+          </div>
+        <% end %>
+      <% else %>
+        <h4>You are not currently following anyone</h4>
+      <% end %>
+    <% else %>
+      <%= button_to 'Sign in with GitHub', git_hub_login_path %>
     <% end %>
   </div>
 </section>
