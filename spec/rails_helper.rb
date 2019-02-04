@@ -7,6 +7,7 @@ abort("The Rails environment is running in production mode!") if Rails.env.produ
 require 'rspec/rails'
 require 'vcr'
 require 'webmock/rspec'
+require 'omniauth-github'
 
 VCR.configure do |config|
   config.ignore_localhost = true
@@ -16,6 +17,13 @@ VCR.configure do |config|
   config.filter_sensitive_data("<YOUTUBE_API_KEY>") { ENV['YOUTUBE_API_KEY'] }
 end
 
+OmniAuth.config.test_mode = true
+def stub_omniauth_github
+  OmniAuth.config.mock_auth[:github] = OmniAuth::AuthHash.new({
+    :uid => '123545',
+    :credentials => {:token => 'dfafeaf3432q45432454'}
+    })
+end
 
 ActiveRecord::Migration.maintain_test_schema!
 
