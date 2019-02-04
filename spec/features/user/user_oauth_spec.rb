@@ -27,7 +27,7 @@ describe 'as a user' do
     expect(@user_1.uid).to eq(nil)
     VCR.use_cassette('nonsense') do
       click_button 'Sign in with GitHub'
-      expect(@user_1.uid).to eq('dfafeaf3432q45432454')
+      expect(@user_1.uid).to eq(123545)
       expect(current_path).to be(dashboard_path)
     end
   end
