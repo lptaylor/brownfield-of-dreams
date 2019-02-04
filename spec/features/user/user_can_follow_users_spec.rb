@@ -24,4 +24,16 @@ describe 'as a user' do
       end
     end
   end
+  it 'will not show link if user is not a registered user in the app' do
+    within '.github' do
+      within "#following-#{@user_1.following[0].id}" do
+        expect(page).to_not have_link("Follow This User")
+      end
+    end
+    within '.github' do
+      within "#followers-#{@user_1.followers[1].id}" do
+        expect(page).to_not have_link("Follow This User")
+      end
+    end
+  end
 end
