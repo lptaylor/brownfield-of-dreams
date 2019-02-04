@@ -26,6 +26,7 @@
         <% @user.followers.each do |follower| %>
           <div id="followers-<%= follower.id %>">
             <%= link_to follower.handle, follower.html_url %>
+            <%= link_to "Follow This User" %>
           </div>
         <% end %>
       <% else %>
