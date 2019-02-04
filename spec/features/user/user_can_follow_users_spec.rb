@@ -10,9 +10,16 @@ describe 'as a user' do
       visit dashboard_path
     end
   end
-  it 'shows a link to follow another user' do
+  it 'shows a link to follow another user who is following user' do
     within '.github' do
       within "#followers-#{@user_1.followers[4].id}" do
+        expect(page).to have_link("Follow This User")
+      end
+    end
+  end
+  it 'shows a link to follow another user who user is following' do
+    within '.github' do
+      within "#following-#{@user_1.following[1].id}" do
         expect(page).to have_link("Follow This User")
       end
     end
