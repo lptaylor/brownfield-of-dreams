@@ -7,17 +7,6 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
-  # def create
-  #   user = User.create(user_params)
-  #   if user.save
-  #     session[:user_id] = user.id
-  #     redirect_to dashboard_path
-  #   else
-  #     flash[:error] = 'Username already exists'
-  #     render :new
-  #   end
-  # end
-
   def create
     if params[:user][:password] != params[:user][:password_confirmation]
       flash[:error] = "Passwords don't match"
@@ -44,5 +33,4 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:email, :first_name, :last_name, :password)
   end
-
 end
