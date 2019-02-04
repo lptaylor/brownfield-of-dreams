@@ -5,7 +5,8 @@ describe 'as a user' do
     VCR.use_cassette('follower_data') do
       current_user = create(:user, token: ENV['GIT_HUB_PLACEHOLDER_KEY'])
       @user_1 = UserPresenter.new(current_user)
-      @user_2 = create(:user, token: ENV['GIT_HUB_PLACEHOLDER_KEY_2'])
+      @user_2 = create(:user, token: ENV['GIT_HUB_PLACEHOLDER_KEY_2'], uid: 134434)
+      @user_3 = create(:user, token: ENV['GIT_HUB_PLACEHOLDER_KEY_2'])
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@user_1)
       visit dashboard_path
     end

@@ -7,6 +7,6 @@ class Follower
   end
 
   def exists?
-    User.find_by(uid: @uid)
+    true if User.find_by(uid: @uid)
   end
 end
