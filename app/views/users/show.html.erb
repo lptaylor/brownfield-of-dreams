@@ -9,32 +9,43 @@
   </ul>
   <section>
     <h1>Bookmarked Segments</h1>
+    <% @user.bookmarks.each do |video| %>
+      <div class="bookmark">
+        <%= video.title  %>
+      </div>
+    <% end %>
   </section>
+
     <% if @user.token %>
     <div class="github">
       <h3>Github</h3>
       <% if @user.repositories != nil %>
         <% @user.repositories.each do |repo| %>
           <div id="repository-<%= repo.id %>">
-            <%= link_to repo.name, repo.html_url %>
+            Repo Name:<%= link_to repo.name %>
+            Url: <a href=" <%= repo.html_url %>"> <%= repo.html_url %>
           </div>
           <% end %>
       <% else %>
         <h4>You don't have any repositories available</h4>
       <%end %>
+
       <% if @user.followers != nil %>
+        <h2> Followers </h2>
         <% @user.followers.each do |follower| %>
           <div id="followers-<%= follower.id %>">
-            <%= link_to follower.handle, follower.html_url %>
+            User Name:<%= link_to follower.handle, follower.html_url %>
           </div>
         <% end %>
       <% else %>
         <h4>You currently don't have any followers</h4>
       <% end %>
+
       <% if @user.following != nil %>
+        <h2> Following </h2>
         <% @user.following.each do |followed| %>
           <div id="followers-<%= followed.id %>">
-            <%= link_to followed.handle, followed.html_url %>
+            User Name<%= link_to followed.handle, followed.html_url %>
           </div>
         <% end %>
       <% else %>
