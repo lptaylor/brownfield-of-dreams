@@ -17,10 +17,7 @@ describe User do
 
   it 'lists 5 repositories with each name being a link to that repository' do
     within '.github' do
-      all('.repository').first do
-          expect(page).to have_content("#{@user.repositories[0].name}")
-          expect(page).to have_link("#{@user.repositories[0].name}")
-      end
+      assert_selector('#repository', count: 5)
     end
   end
 end
@@ -42,7 +39,7 @@ describe 'followers' do
   end
   it 'displays followers for an authenticated user' do
     within '.github' do
-      within "#followers-#{@user.followers[0].id}" do
+      all("#followers") do
         expect(page).to have_content(@user.followers[0].handle)
         expect(page).to have_link(@user.followers[0].handle)
       end
