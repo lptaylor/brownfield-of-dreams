@@ -20,10 +20,10 @@ class InviteFacade
   end
 
   private
-  # def current_user_search_result
-  #   binding.pry
-  #   @_current_user_search_result ||= service(@current_user.gusername)
-  # end
+  def current_user_search_result
+    # binding.pry
+    @_current_user_search_result ||= service(@current_user.github_username)
+  end
 
   def friend_search_result
     @_friend_search_result ||= service(@github_user)
