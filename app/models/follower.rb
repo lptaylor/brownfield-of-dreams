@@ -1,12 +1,12 @@
 class Follower
-  attr_reader :uid, :handle, :html_url
+  attr_reader :id, :handle, :html_url
   def initialize(attributes)
-    @uid = attributes[:uid]
+    @id = attributes[:id]
     @handle = attributes[:login]
     @html_url = attributes[:html_url]
   end
 
   def exists?
-    true if User.find_by(uid: @uid)
+    true if User.find_by(uid: @id)
   end
 end
