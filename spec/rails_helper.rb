@@ -14,16 +14,11 @@ VCR.configure do |config|
   config.cassette_library_dir = 'spec/cassettes'
   config.hook_into :webmock
   config.configure_rspec_metadata!
+  config.allow_http_connections_when_no_cassette = true
   config.filter_sensitive_data("<YOUTUBE_API_KEY>") { ENV['YOUTUBE_API_KEY'] }
 end
 
 OmniAuth.config.test_mode = true
-def stub_omniauth_github
-  OmniAuth.config.mock_auth[:github] = OmniAuth::AuthHash.new({
-    :uid => 123545,
-    :credentials => {:token => 'dfafeaf3432q45432454'}
-    })
-end
 
 ActiveRecord::Migration.maintain_test_schema!
 
@@ -56,4 +51,29 @@ RSpec.configure do |config|
   config.infer_spec_type_from_file_location!
 
   config.filter_rails_from_backtrace!
+end
+
+def stub_omniauth_github
+  OmniAuth.config.mock_auth[:github] = OmniAuth::AuthHash.new({
+    :uid => 123545,
+    :credentials => {:token => 'dfafeaf3432q45432454'}
+    })
+end
+
+def get_repos
+  stub_request(:any, "https://api.github.com/user/repos").
+     with(headers: { 'Authorization' => "token abc"}).
+   to_return(body: File.read("./spec/fixtures/repos_mock_api.json"))
+end
+
+def get_followers
+  stub_request(:any, "https://api.github.com/user/followers").
+     with(headers: { 'Authorization' => "token abc"}).
+   to_return(body: File.read("./spec/fixtures/followers_mock_api.json"))
+end
+
+def get_following
+  stub_request(:any, "https://api.github.com/user/following").
+     with(headers: { 'Authorization' => "token abc"}).
+   to_return(body: File.read("./spec/fixtures/followering_mock_api.json"))
 end
