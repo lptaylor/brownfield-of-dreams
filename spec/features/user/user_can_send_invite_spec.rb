@@ -24,29 +24,26 @@ describe User do
     end
   end
 
-  # it 'user can not send an invite to a nonexistant username' do
+  # it "user can't send an invite to peaple that don't exist" do
+  #   VCR.use_cassette('github_user_data') do
+  #     username = "NickLindeberg"
   #
-  #   expected_username = JSON.parse(File.read("./spec/fixtures/github_user_information.json"))['login']
+  #     user = create(:user)
   #
-  #   stub_request(:any, "https://api.github.com/users/#{expected_username}").
-  #     with(headers: { 'Authorization' => "token abc"}).
-  #     to_return(body: File.read("./spec/fixtures/github_user_information.json"))
+  #     allow_any_instance_of(ApplicationController).to receive(:current_user) {user}
   #
-  #   user_1 = create(:user, token: "abc")
+  #     visit dashboard_path
   #
-  #   allow_any_instance_of(ApplicationController).to receive(:current_user) {user_1}
+  #     within(".email-friend-invite")do
+  #       click_link("Send an Invite")
+  #     end
   #
-  #   visit dashboard_path
+  #     expect(current_path).to eq("/invite")
+  #     fill_in "github", with: "randomeness"
   #
-  #   within(".email-friend-invite")do
-  #     click_link("Send an Invite")
+  #     click_on("Send Invite")
+  #     expect(current_path).to eq(invite_path)
+  #     expect(page).to have_content("The Github user you selected doesn't have an email address associated with their account.")
   #   end
-  #
-  #   expect(current_path).to eq("/invite")
-  #   fill_in "github", with: "someone_else"
-  #
-  #   click_on("Send Invite")
-  #   expect(current_path).to eq(invite_path)
-  #   expect(page).to have_content("The Github user you selected doesn't have an email address associated with their account.")
   # end
 end
