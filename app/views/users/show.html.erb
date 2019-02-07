@@ -21,7 +21,7 @@
       <h3>Github</h3>
       <% if @user.repositories != nil %>
         <% @user.repositories.each do |repo| %>
-          <div id="repository-<%= repo.id %>">
+          <div id="repository">
             Repo Name: <%= link_to repo.name %>
             <br>
             Url: <a href=" <%= repo.html_url %>"> <%= repo.html_url %>
