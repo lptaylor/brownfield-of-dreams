@@ -29,17 +29,11 @@
       <% else %>
         <h4>You don't have any repositories available</h4>
       <%end %>
-<<<<<<< HEAD
+
       <% if @user.github_followers != nil %>
+        <h2> Followers </h2>
         <% @user.github_followers.each do |follower| %>
           <div id="github_followers-<%= follower.id %>">
-=======
-
-      <% if @user.followers != nil %>
-        <h2> Followers </h2>
-        <% @user.followers.each do |follower| %>
-          <div id="followers-<%= follower.id %>">
->>>>>>> efa67db42df398b50e2eddf2f9af32f95906a0a0
             <%= link_to follower.handle, follower.html_url %>
             <% if follower.exists? %>
               <%= link_to "Follow This User", create_follower_path %>
@@ -49,17 +43,11 @@
       <% else %>
         <h4>You currently don't have any github_followers</h4>
       <% end %>
-<<<<<<< HEAD
+
       <% if @user.github_following != nil %>
+        <h2> Following </h2>
         <% @user.github_following.each do |followed| %>
           <div id="github_following-<%= followed.id %>">
-=======
-
-      <% if @user.following != nil %>
-        <h2> Following </h2>
-        <% @user.following.each do |followed| %>
-          <div id="following-<%= followed.id %>">
->>>>>>> efa67db42df398b50e2eddf2f9af32f95906a0a0
             <%= link_to followed.handle, followed.html_url %>
             <% if followed.exists? %>
               <%= link_to "Follow This User", create_follower_path %>

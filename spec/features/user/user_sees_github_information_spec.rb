@@ -43,11 +43,7 @@ describe 'github_followers' do
       visit '/dashboard'
     end
   end
-<<<<<<< HEAD
   it 'displays github_followers for an authenticated user' do
-=======
-  xit 'displays followers for an authenticated user' do
->>>>>>> efa67db42df398b50e2eddf2f9af32f95906a0a0
     within '.github' do
       all("#github_followers") do
         expect(page).to have_content(@user.github_followers[0].handle)
