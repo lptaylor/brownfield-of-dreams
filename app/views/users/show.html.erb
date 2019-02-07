@@ -22,7 +22,8 @@
       <% if @user.repositories != nil %>
         <% @user.repositories.each do |repo| %>
           <div id="repository-<%= repo.id %>">
-            Repo Name:<%= link_to repo.name %>
+            Repo Name: <%= link_to repo.name %>
+            <br>
             Url: <a href=" <%= repo.html_url %>"> <%= repo.html_url %>
           </div>
           <% end %>
@@ -57,6 +58,11 @@
       <% else %>
         <h4>You are not currently github_following anyone</h4>
       <% end %>
+
+      <section class="email-friend-invite">
+        <%= link_to "Send an Invite", invite_path %>
+      </section>
+
     <% else %>
       <%= button_to 'Sign in with GitHub', git_hub_login_path %>
     <% end %>
