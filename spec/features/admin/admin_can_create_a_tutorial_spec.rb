@@ -12,8 +12,7 @@ feature "An admin can create" do
     fill_in "tutorial_description", with: "Kickass Container Tech."
     fill_in "tutorial_thumbnail", with: "https://www.google.com/url?sa=i&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwi9p4fWjqngAhWTHDQIHXo2Bu0QjRx6BAgBEAU&url=%2Furl%3Fsa%3Di%26source%3Dimages%26cd%3D%26ved%3D%26url%3Dhttps%253A%252F%252Fwww.techrepublic.com%252Farticle%252Fdocker-the-smart-persons-guide%252F%26psig%3DAOvVaw25-tEYNTkPxtgJuL32okq1%26ust%3D1549611456594975&psig=AOvVaw25-tEYNTkPxtgJuL32okq1&ust=1549611456594975"
     click_on "Save"
-    binding.pry
-    save_and_open_page
+
     expect(current_path).to eq(tutorial_path(Tutorial.last.id))
     expect(page).to have_content("Docker Container has been successfully added!")
   end
