@@ -16,7 +16,7 @@ class User < ApplicationRecord
 
   def add_friend(friend_uid)
     if new_friend = User.find_by(uid: friend_uid)
-      binding.pry
+      # binding.pry
       self.followers << new_friend
       self.save
     else
