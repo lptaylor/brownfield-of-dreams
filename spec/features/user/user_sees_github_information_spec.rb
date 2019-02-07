@@ -15,7 +15,7 @@ describe User do
     end
   end
 
-  it 'lists 5 repositories with each name being a link to that repository' do
+  it 'lists 5 repositories' do
     within '.github' do
       assert_selector('#repository', count: 5)
     end
@@ -23,8 +23,14 @@ describe User do
 end
 
 describe 'non token or no repos' do
-  xit 'shows message if repositories list is 0' do
+  it 'shows message if repositories list is 0' do
+    VCR.use_cassette('nil_token_data') do
+      user = create(:user, token: nil)
+      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
+      visit '/dashboard'
 
+      expect(page).to have_button("Sign in with GitHub")
+    end
   end
 end
 
@@ -37,7 +43,11 @@ describe 'github_followers' do
       visit '/dashboard'
     end
   end
+<<<<<<< HEAD
   it 'displays github_followers for an authenticated user' do
+=======
+  xit 'displays followers for an authenticated user' do
+>>>>>>> efa67db42df398b50e2eddf2f9af32f95906a0a0
     within '.github' do
       all("#github_followers") do
         expect(page).to have_content(@user.github_followers[0].handle)

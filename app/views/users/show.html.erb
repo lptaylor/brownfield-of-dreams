@@ -9,22 +9,37 @@
   </ul>
   <section>
     <h1>Bookmarked Segments</h1>
+    <% @user.bookmarks.each do |video| %>
+      <div class="bookmark">
+        <%= video.title  %>
+      </div>
+    <% end %>
   </section>
+
     <% if @user.token %>
     <div class="github">
       <h3>Github</h3>
       <% if @user.repositories != nil %>
         <% @user.repositories.each do |repo| %>
-          <div id="repository">
-            <%= link_to repo.name, repo.html_url %>
+          <div id="repository-<%= repo.id %>">
+            Repo Name:<%= link_to repo.name %>
+            Url: <a href=" <%= repo.html_url %>"> <%= repo.html_url %>
           </div>
           <% end %>
       <% else %>
         <h4>You don't have any repositories available</h4>
       <%end %>
+<<<<<<< HEAD
       <% if @user.github_followers != nil %>
         <% @user.github_followers.each do |follower| %>
           <div id="github_followers-<%= follower.id %>">
+=======
+
+      <% if @user.followers != nil %>
+        <h2> Followers </h2>
+        <% @user.followers.each do |follower| %>
+          <div id="followers-<%= follower.id %>">
+>>>>>>> efa67db42df398b50e2eddf2f9af32f95906a0a0
             <%= link_to follower.handle, follower.html_url %>
             <% if follower.exists? %>
               <%= link_to "Follow This User", create_follower_path %>
@@ -34,9 +49,17 @@
       <% else %>
         <h4>You currently don't have any github_followers</h4>
       <% end %>
+<<<<<<< HEAD
       <% if @user.github_following != nil %>
         <% @user.github_following.each do |followed| %>
           <div id="github_following-<%= followed.id %>">
+=======
+
+      <% if @user.following != nil %>
+        <h2> Following </h2>
+        <% @user.following.each do |followed| %>
+          <div id="following-<%= followed.id %>">
+>>>>>>> efa67db42df398b50e2eddf2f9af32f95906a0a0
             <%= link_to followed.handle, followed.html_url %>
             <% if followed.exists? %>
               <%= link_to "Follow This User", create_follower_path %>

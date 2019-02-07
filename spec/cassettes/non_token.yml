@@ -7,6 +7,8 @@ http_interactions:
       encoding: US-ASCII
       string: ''
     headers:
+      Authorization:
+      - token
       User-Agent:
       - Faraday v0.15.4
       Accept-Encoding:
@@ -21,21 +23,21 @@ http_interactions:
       Server:
       - GitHub.com
       Date:
-      - Fri, 01 Feb 2019 15:33:05 GMT
+      - Mon, 04 Feb 2019 22:35:20 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
-      - '121'
+      - '83'
       Status:
       - 401 Unauthorized
+      X-Github-Media-Type:
+      - github.v3; format=json
       X-Ratelimit-Limit:
       - '60'
       X-Ratelimit-Remaining:
-      - '51'
+      - '27'
       X-Ratelimit-Reset:
-      - '1549038447'
-      X-Github-Media-Type:
-      - github.v3; format=json
+      - '1549321414'
       Access-Control-Expose-Headers:
       - ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining,
         X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval,
@@ -55,12 +57,12 @@ http_interactions:
       Content-Security-Policy:
       - default-src 'none'
       X-Github-Request-Id:
-      - D5F9:0D7B:14DDAA1:2A82CD3:5C5466B1
+      - F8EB:4AE2:F77121:21F8D8F:5C58BE28
     body:
       encoding: UTF-8
-      string: '{"message":"Requires authentication","documentation_url":"https://developer.github.com/v3/repos/#list-your-repositories"}'
+      string: '{"message":"Bad credentials","documentation_url":"https://developer.github.com/v3"}'
     http_version: 
-  recorded_at: Fri, 01 Feb 2019 15:33:02 GMT
+  recorded_at: Mon, 04 Feb 2019 22:35:20 GMT
 - request:
     method: get
     uri: https://api.github.com/user/followers
@@ -68,6 +70,8 @@ http_interactions:
       encoding: US-ASCII
       string: ''
     headers:
+      Authorization:
+      - token
       User-Agent:
       - Faraday v0.15.4
       Accept-Encoding:
@@ -82,21 +86,21 @@ http_interactions:
       Server:
       - GitHub.com
       Date:
-      - Fri, 01 Feb 2019 15:33:06 GMT
+      - Mon, 04 Feb 2019 22:35:20 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
-      - '133'
+      - '83'
       Status:
       - 401 Unauthorized
+      X-Github-Media-Type:
+      - github.v3; format=json
       X-Ratelimit-Limit:
       - '60'
       X-Ratelimit-Remaining:
-      - '50'
+      - '26'
       X-Ratelimit-Reset:
-      - '1549038447'
-      X-Github-Media-Type:
-      - github.v3; format=json
+      - '1549321414'
       Access-Control-Expose-Headers:
       - ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining,
         X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval,
@@ -116,12 +120,12 @@ http_interactions:
       Content-Security-Policy:
       - default-src 'none'
       X-Github-Request-Id:
-      - D5FA:775A:92FD88:16D9CAE:5C5466B1
+      - F8EC:1D29:142A27B:2A8902F:5C58BE28
     body:
       encoding: UTF-8
-      string: '{"message":"Requires authentication","documentation_url":"https://developer.github.com/v3/users/followers/#list-followers-of-a-user"}'
+      string: '{"message":"Bad credentials","documentation_url":"https://developer.github.com/v3"}'
     http_version: 
-  recorded_at: Fri, 01 Feb 2019 15:33:03 GMT
+  recorded_at: Mon, 04 Feb 2019 22:35:20 GMT
 - request:
     method: get
     uri: https://api.github.com/user/following
@@ -129,6 +133,8 @@ http_interactions:
       encoding: US-ASCII
       string: ''
     headers:
+      Authorization:
+      - token
       User-Agent:
       - Faraday v0.15.4
       Accept-Encoding:
@@ -143,21 +149,21 @@ http_interactions:
       Server:
       - GitHub.com
       Date:
-      - Fri, 01 Feb 2019 15:33:06 GMT
+      - Mon, 04 Feb 2019 22:35:20 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
-      - '144'
+      - '83'
       Status:
       - 401 Unauthorized
+      X-Github-Media-Type:
+      - github.v3; format=json
       X-Ratelimit-Limit:
       - '60'
       X-Ratelimit-Remaining:
-      - '49'
+      - '25'
       X-Ratelimit-Reset:
-      - '1549038447'
-      X-Github-Media-Type:
-      - github.v3; format=json
+      - '1549321414'
       Access-Control-Expose-Headers:
       - ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining,
         X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval,
@@ -177,12 +183,12 @@ http_interactions:
       Content-Security-Policy:
       - default-src 'none'
       X-Github-Request-Id:
-      - D5FB:298B:16D90E2:2D93859:5C5466B2
+      - F8ED:23F4:1110205:23E7C59:5C58BE28
     body:
       encoding: UTF-8
-      string: '{"message":"Requires authentication","documentation_url":"https://developer.github.com/v3/users/followers/#list-users-followed-by-another-user"}'
+      string: '{"message":"Bad credentials","documentation_url":"https://developer.github.com/v3"}'
     http_version: 
-  recorded_at: Fri, 01 Feb 2019 15:33:03 GMT
+  recorded_at: Mon, 04 Feb 2019 22:35:20 GMT
 - request:
     method: get
     uri: https://api.github.com/user/repos
@@ -190,6 +196,8 @@ http_interactions:
       encoding: US-ASCII
       string: ''
     headers:
+      Authorization:
+      - token
       User-Agent:
       - Faraday v0.15.4
       Accept-Encoding:
@@ -204,21 +212,21 @@ http_interactions:
       Server:
       - GitHub.com
       Date:
-      - Fri, 01 Feb 2019 15:33:12 GMT
+      - Mon, 04 Feb 2019 22:35:21 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
-      - '121'
+      - '83'
       Status:
       - 401 Unauthorized
+      X-Github-Media-Type:
+      - github.v3; format=json
       X-Ratelimit-Limit:
       - '60'
       X-Ratelimit-Remaining:
-      - '48'
+      - '24'
       X-Ratelimit-Reset:
-      - '1549038447'
-      X-Github-Media-Type:
-      - github.v3; format=json
+      - '1549321414'
       Access-Control-Expose-Headers:
       - ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining,
         X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval,
@@ -238,12 +246,12 @@ http_interactions:
       Content-Security-Policy:
       - default-src 'none'
       X-Github-Request-Id:
-      - D600:3759:8FA73D:16EA2E6:5C5466B8
+      - F8F2:3E5E:10D4FF2:24004C2:5C58BE28
     body:
       encoding: UTF-8
-      string: '{"message":"Requires authentication","documentation_url":"https://developer.github.com/v3/repos/#list-your-repositories"}'
+      string: '{"message":"Bad credentials","documentation_url":"https://developer.github.com/v3"}'
     http_version: 
-  recorded_at: Fri, 01 Feb 2019 15:33:09 GMT
+  recorded_at: Mon, 04 Feb 2019 22:35:21 GMT
 - request:
     method: get
     uri: https://api.github.com/user/followers
@@ -251,6 +259,8 @@ http_interactions:
       encoding: US-ASCII
       string: ''
     headers:
+      Authorization:
+      - token
       User-Agent:
       - Faraday v0.15.4
       Accept-Encoding:
@@ -265,21 +275,21 @@ http_interactions:
       Server:
       - GitHub.com
       Date:
-      - Fri, 01 Feb 2019 15:33:12 GMT
+      - Mon, 04 Feb 2019 22:35:21 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
-      - '133'
+      - '83'
       Status:
       - 401 Unauthorized
+      X-Github-Media-Type:
+      - github.v3; format=json
       X-Ratelimit-Limit:
       - '60'
       X-Ratelimit-Remaining:
-      - '47'
+      - '23'
       X-Ratelimit-Reset:
-      - '1549038447'
-      X-Github-Media-Type:
-      - github.v3; format=json
+      - '1549321414'
       Access-Control-Expose-Headers:
       - ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining,
         X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval,
@@ -299,12 +309,12 @@ http_interactions:
       Content-Security-Policy:
       - default-src 'none'
       X-Github-Request-Id:
-      - D601:4138:15C06FE:2AFEC25:5C5466B8
+      - F8F3:6C2D:49E724:C21294:5C58BE29
     body:
       encoding: UTF-8
-      string: '{"message":"Requires authentication","documentation_url":"https://developer.github.com/v3/users/followers/#list-followers-of-a-user"}'
+      string: '{"message":"Bad credentials","documentation_url":"https://developer.github.com/v3"}'
     http_version: 
-  recorded_at: Fri, 01 Feb 2019 15:33:09 GMT
+  recorded_at: Mon, 04 Feb 2019 22:35:21 GMT
 - request:
     method: get
     uri: https://api.github.com/user/following
@@ -312,6 +322,8 @@ http_interactions:
       encoding: US-ASCII
       string: ''
     headers:
+      Authorization:
+      - token
       User-Agent:
       - Faraday v0.15.4
       Accept-Encoding:
@@ -326,21 +338,21 @@ http_interactions:
       Server:
       - GitHub.com
       Date:
-      - Fri, 01 Feb 2019 15:33:13 GMT
+      - Mon, 04 Feb 2019 22:35:21 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
-      - '144'
+      - '83'
       Status:
       - 401 Unauthorized
+      X-Github-Media-Type:
+      - github.v3; format=json
       X-Ratelimit-Limit:
       - '60'
       X-Ratelimit-Remaining:
-      - '46'
+      - '22'
       X-Ratelimit-Reset:
-      - '1549038447'
-      X-Github-Media-Type:
-      - github.v3; format=json
+      - '1549321414'
       Access-Control-Expose-Headers:
       - ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining,
         X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval,
@@ -360,10 +372,10 @@ http_interactions:
       Content-Security-Policy:
       - default-src 'none'
       X-Github-Request-Id:
-      - D602:0F97:10CDF2D:244A590:5C5466B9
+      - F8F4:436F:14A82F7:29ADA2D:5C58BE29
     body:
       encoding: UTF-8
-      string: '{"message":"Requires authentication","documentation_url":"https://developer.github.com/v3/users/followers/#list-users-followed-by-another-user"}'
+      string: '{"message":"Bad credentials","documentation_url":"https://developer.github.com/v3"}'
     http_version: 
-  recorded_at: Fri, 01 Feb 2019 15:33:09 GMT
+  recorded_at: Mon, 04 Feb 2019 22:35:21 GMT
 recorded_with: VCR 4.0.0
