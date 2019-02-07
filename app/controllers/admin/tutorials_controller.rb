@@ -1,6 +1,7 @@
 class Admin::TutorialsController < Admin::BaseController
   def new
     @tutorial = Tutorial.new
+    @tutorial.videos.build 
   end
 
   def create
