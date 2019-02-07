@@ -34,6 +34,7 @@ Rails.application.routes.draw do
   post '/invite', to: "invite#create"
 
   get '/dashboard', to: 'users#show'
+  post '/dashboard', to: 'follower#create', as: 'create_follower'
   get '/about', to: 'about#show'
   get '/get_started', to: 'get_started#show'
   get '/auth/github', as: 'git_hub_login'

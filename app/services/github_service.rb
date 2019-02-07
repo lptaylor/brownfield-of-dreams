@@ -15,7 +15,7 @@ class GithubService
     JSON.parse(response.body, symbolize_names: true)
   end
 
-  def user_followers(api_path)
+  def user_github_followers(api_path)
     response = conn.get("/user/#{api_path}")
     JSON.parse(response.body, symbolize_names: true)
   end

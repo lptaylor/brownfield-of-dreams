@@ -75,5 +75,5 @@ end
 def get_following
   stub_request(:any, "https://api.github.com/user/following").
      with(headers: { 'Authorization' => "token abc"}).
-   to_return(body: File.read("./spec/fixtures/followering_mock_api.json"))
+   to_return(body: File.read("./spec/fixtures/following_mock_api.json"))
 end

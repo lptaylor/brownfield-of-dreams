@@ -1,10 +1,10 @@
 class UserPresenter < User
-  attr_reader :repositories, :followers, :following, :bookmarks
+  attr_reader :repositories, :github_followers, :github_following, :bookmarks
   def initialize(current_user)
     super(current_user.attributes)
     @repositories = RepositoryListResultFacade.user_repository_list(current_user)
-    @followers = FollowerListFacade.user_followers_list(current_user, "followers")
-    @following = FollowerListFacade.user_followers_list(current_user, "following")
+    @github_followers = GitHubFollowerListFacade.user_github_followers_list(current_user, "followers")
+    @github_following = GitHubFollowerListFacade.user_github_followers_list(current_user, "following")
     @bookmarks = BookmarkListFacade.bookmarks(current_user)
   end
 end
