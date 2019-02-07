@@ -30,8 +30,11 @@ Rails.application.routes.draw do
 
   get '/email_validation', to: "email_validation#create"
   get '/welcome_thanks', to: "email_validation#show"
+
   get '/invite', to: "invite#new"
   post '/invite', to: "invite#create"
+
+  post '/new_friendship', to: 'follower#create'
 
   get '/dashboard', to: 'users#show'
   post '/dashboard', to: 'follower#create', as: 'create_follower'

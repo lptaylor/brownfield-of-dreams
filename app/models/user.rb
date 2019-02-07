@@ -13,4 +13,14 @@ class User < ApplicationRecord
   validates_presence_of :first_name
   enum role: [:default, :admin]
   has_secure_password
+
+  def add_friend(friend_uid)
+    if new_friend = User.find_by(uid: friend_uid)
+      binding.pry
+      self.followers << new_friend
+      self.save
+    else
+      false
+    end
+  end
 end

@@ -10,9 +10,11 @@ describe 'as a user' do
       OmniAuth.config.mock_auth[:github] = nil
     end
   end
+
   it 'shows button to connect to github' do
     expect(page).to have_button('Sign in with GitHub')
   end
+
   it 'returns user to dash and updates user with github token' do
     stub_omniauth_github
     expect(@user_1.token).to eq(nil)
@@ -22,6 +24,7 @@ describe 'as a user' do
       expect(current_path).to eq(dashboard_path)
     end
   end
+
   it 'returns user to dash and updates user with github uid' do
     stub_omniauth_github
     expect(@user_1.uid).to eq(nil)
