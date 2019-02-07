@@ -1,6 +1,7 @@
 class GitHubSessionsController < ApplicationController
   def create
     @user = current_user
+    @user.update_attributes(token: auth_hash['credentials']['token'], uid: auth_hash['uid'] )
     @user.update_attributes(token: auth_hash)
     @user.update_attributes(github_username: github_username)
     @user.save
@@ -9,7 +10,7 @@ class GitHubSessionsController < ApplicationController
 
   private
   def auth_hash
-    request.env['omniauth.auth']['credentials']['token']
+    request.env['omniauth.auth']
   end
 
   def github_username

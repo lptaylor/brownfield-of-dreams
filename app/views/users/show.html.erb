@@ -35,7 +35,10 @@
         <h2> Followers </h2>
         <% @user.followers.each do |follower| %>
           <div id="followers-<%= follower.id %>">
-            User Name: <%= link_to follower.handle, follower.html_url %>
+            <%= link_to follower.handle, follower.html_url %>
+            <% if follower.exists? %>
+              <%= link_to "Follow This User" %>
+            <% end %>
           </div>
         <% end %>
       <% else %>
@@ -45,8 +48,11 @@
       <% if @user.following != nil %>
         <h2> Following </h2>
         <% @user.following.each do |followed| %>
-          <div id="followers-<%= followed.id %>">
-            User Name: <%= link_to followed.handle, followed.html_url %>
+          <div id="following-<%= followed.id %>">
+            <%= link_to followed.handle, followed.html_url %>
+            <% if followed.exists? %>
+              <%= link_to "Follow This User" %>
+            <% end %>
           </div>
         <% end %>
       <% else %>

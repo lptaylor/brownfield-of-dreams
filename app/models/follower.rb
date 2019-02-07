@@ -5,4 +5,8 @@ class Follower
     @handle = attributes[:login]
     @html_url = attributes[:html_url]
   end
+
+  def exists?
+    true if User.find_by(uid: @id)
+  end
 end
