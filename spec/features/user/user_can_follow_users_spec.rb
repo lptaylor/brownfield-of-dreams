@@ -9,29 +9,39 @@ describe 'as a user' do
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@user_1)
       visit dashboard_path
   end
-  it 'shows a link to follow another user who is following user' do
+  it 'shows a link to follow another user who is github_following user' do
     within '.github' do
-      within "#followers-#{@user_1.followers[4].id}" do
+      within "#github_followers-#{@user_1.github_followers[4].id}" do
         expect(page).to have_link("Follow This User")
       end
     end
   end
-  it 'shows a link to follow another user who user is following' do
+  it 'shows a link to follow another user who user is github_following' do
     within '.github' do
-      within "#following-#{@user_1.following[1].id}" do
+      within "#github_following-#{@user_1.github_following[1].id}" do
         expect(page).to have_link("Follow This User")
       end
     end
   end
   it 'will not show link if user is not a registered user in the app' do
     within '.github' do
-      within "#followers-#{@user_1.followers[1].id}" do
+      within "#github_followers-#{@user_1.github_followers[1].id}" do
         expect(page).to_not have_link("Follow This User")
       end
     end
     within '.github' do
-      within "#following-#{@user_1.following[0].id}" do
+      within "#github_following-#{@user_1.github_following[0].id}" do
         expect(page).to_not have_link("Follow This User")
+      end
+    end
+  end
+  it 'forms follower relationship when clicked on' do
+    within '.github' do
+      within "#github_following-#{@user_1.github_following[1].id}" do
+        click_link("Follow This User")
+
+        expect(current_path).to eq(dashboard_path)
+        expect(page).to have_content("You are now github_following this user")
       end
     end
   end

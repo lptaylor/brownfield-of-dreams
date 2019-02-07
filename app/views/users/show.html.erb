@@ -22,29 +22,29 @@
       <% else %>
         <h4>You don't have any repositories available</h4>
       <%end %>
-      <% if @user.followers != nil %>
-        <% @user.followers.each do |follower| %>
-          <div id="followers-<%= follower.id %>">
+      <% if @user.github_followers != nil %>
+        <% @user.github_followers.each do |follower| %>
+          <div id="github_followers-<%= follower.id %>">
             <%= link_to follower.handle, follower.html_url %>
             <% if follower.exists? %>
-              <%= link_to "Follow This User" %>
+              <%= link_to "Follow This User", create_follower_path %>
             <% end %>
           </div>
         <% end %>
       <% else %>
-        <h4>You currently don't have any followers</h4>
+        <h4>You currently don't have any github_followers</h4>
       <% end %>
-      <% if @user.following != nil %>
-        <% @user.following.each do |followed| %>
-          <div id="following-<%= followed.id %>">
+      <% if @user.github_following != nil %>
+        <% @user.github_following.each do |followed| %>
+          <div id="github_following-<%= followed.id %>">
             <%= link_to followed.handle, followed.html_url %>
             <% if followed.exists? %>
-              <%= link_to "Follow This User" %>
+              <%= link_to "Follow This User", create_follower_path %>
             <% end %>
           </div>
         <% end %>
       <% else %>
-        <h4>You are not currently following anyone</h4>
+        <h4>You are not currently github_following anyone</h4>
       <% end %>
     <% else %>
       <%= button_to 'Sign in with GitHub', git_hub_login_path %>

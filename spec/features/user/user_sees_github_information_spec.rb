@@ -28,7 +28,7 @@ describe 'non token or no repos' do
   end
 end
 
-describe 'followers' do
+describe 'github_followers' do
   before(:each) do
     VCR.use_cassette('github_api_data') do
       current_user = create(:user)
@@ -37,11 +37,11 @@ describe 'followers' do
       visit '/dashboard'
     end
   end
-  it 'displays followers for an authenticated user' do
+  it 'displays github_followers for an authenticated user' do
     within '.github' do
-      all("#followers") do
-        expect(page).to have_content(@user.followers[0].handle)
-        expect(page).to have_link(@user.followers[0].handle)
+      all("#github_followers") do
+        expect(page).to have_content(@user.github_followers[0].handle)
+        expect(page).to have_link(@user.github_followers[0].handle)
       end
     end
   end

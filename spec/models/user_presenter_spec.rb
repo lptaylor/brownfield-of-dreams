@@ -19,12 +19,12 @@ RSpec.describe UserPresenter, type: :model do
       expect(@user.repositories).to be_a(Array)
     end
 
-    it 'has all of the followers for this user' do
-      expect(@user.followers).to be_a(Array)
+    it 'has all of the github_followers for this user' do
+      expect(@user.github_followers).to be_a(Array)
     end
 
-    it 'has a list of github profiles user is following' do
-      expect(@user.following).to be_a(Array)
+    it 'has a list of github profiles user is github_following' do
+      expect(@user.github_following).to be_a(Array)
     end
   end
 end
