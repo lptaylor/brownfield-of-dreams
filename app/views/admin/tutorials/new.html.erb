@@ -1,5 +1,15 @@
 <h2>New Tutorial</h2>
 <%= form_for [:admin, @tutorial] do |f| %>
+  <% if @tutorial.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@tutorial.errors.count, "error") %> prohibited this item from being saved:</h2>
+      <ul>
+        <% @tutorial.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
   <%= f.label :title %>
   <%= f.text_field :title, class: "block col-4 field" %>
   <%= f.label :description %>
@@ -10,8 +20,10 @@
   <h3>Videos</h3>
 
   <%= f.fields_for :videos do |builder| %>
-    <%= f.label :youtube_url %>
-    <%= f.text_field :video_id, class: "block col-4 field" %>
+    <li>
+      <%= builder.label :youtube_url %>
+      <%= builder.text_field :video_id, class: "block col-4 field" %>
+    </li>
   <% end %>
 
   <%= f.submit "Save", class: "mt2 btn btn-primary mb1 bg-teal"  %>
