@@ -45,8 +45,9 @@ describe 'as a user' do
         click_button("Follow This User")
 
         expect(current_path).to eq(dashboard_path)
-        expect(page).to have_content("You are now github_following this user")
+
       end
     end
+    expect(page).to have_content("You are now Friends!")
   end
 end

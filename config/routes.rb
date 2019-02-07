@@ -34,7 +34,7 @@ Rails.application.routes.draw do
   get '/invite', to: "invite#new"
   post '/invite', to: "invite#create"
 
-  post '/new_friendship', to: 'follower#create'
+  post '/new_friendship', to: 'friendship#create'
 
   get '/dashboard', to: 'users#show'
   post '/dashboard', to: 'follower#create', as: 'create_follower'
