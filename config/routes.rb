@@ -32,6 +32,7 @@ Rails.application.routes.draw do
   get '/welcome_thanks', to: "email_validation#show"
 
   get '/dashboard', to: 'users#show'
+  post '/dashboard', to: 'follower#create', as: 'create_follower'
   get '/about', to: 'about#show'
   get '/get_started', to: 'get_started#show'
   get '/auth/github', as: 'git_hub_login'
