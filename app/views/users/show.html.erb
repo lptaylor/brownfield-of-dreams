@@ -22,7 +22,8 @@
       <% if @user.repositories != nil %>
         <% @user.repositories.each do |repo| %>
           <div id="repository-<%= repo.id %>">
-            Repo Name:<%= link_to repo.name %>
+            Repo Name: <%= link_to repo.name %>
+            <br>
             Url: <a href=" <%= repo.html_url %>"> <%= repo.html_url %>
           </div>
           <% end %>
@@ -34,7 +35,7 @@
         <h2> Followers </h2>
         <% @user.followers.each do |follower| %>
           <div id="followers-<%= follower.id %>">
-            User Name:<%= link_to follower.handle, follower.html_url %>
+            User Name: <%= link_to follower.handle, follower.html_url %>
           </div>
         <% end %>
       <% else %>
@@ -45,12 +46,17 @@
         <h2> Following </h2>
         <% @user.following.each do |followed| %>
           <div id="followers-<%= followed.id %>">
-            User Name<%= link_to followed.handle, followed.html_url %>
+            User Name: <%= link_to followed.handle, followed.html_url %>
           </div>
         <% end %>
       <% else %>
         <h4>You are not currently following anyone</h4>
       <% end %>
+
+      <section class="email-friend-invite">
+        <%= link_to "Send an Invite", invite_path %>
+      </section>
+
     <% else %>
       <%= button_to 'Sign in with GitHub', git_hub_login_path %>
     <% end %>
