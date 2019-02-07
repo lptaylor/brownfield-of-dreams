@@ -70,6 +70,7 @@ ActiveRecord::Schema.define(version: 2019_02_04_220012) do
     t.string "token"
     t.boolean "status", default: false
     t.integer "uid"
+    t.string "github_username"
     t.index ["email"], name: "index_users_on_email"
   end
 
