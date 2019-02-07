@@ -21,7 +21,6 @@ class InviteFacade
 
   private
   def current_user_search_result
-    # binding.pry
     @_current_user_search_result ||= service(@current_user.github_username)
   end
 
