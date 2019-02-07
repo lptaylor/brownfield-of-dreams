@@ -13,7 +13,7 @@ describe 'as a user' do
   it 'shows a link to follow another user who is github_following user' do
     within '.github' do
       within "#github_followers-#{@user_1.github_followers[4].id}" do
-        expect(page).to have_link("Follow This User")
+        expect(page).to have_button("Follow This User")
       end
     end
   end
@@ -21,7 +21,7 @@ describe 'as a user' do
   it 'shows a link to follow another user who user is github_following' do
     within '.github' do
       within "#github_following-#{@user_1.github_following[1].id}" do
-        expect(page).to have_link("Follow This User")
+        expect(page).to have_button("Follow This User")
       end
     end
   end
