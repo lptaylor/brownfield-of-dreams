@@ -1,12 +1,16 @@
 class TutorialsController < ApplicationController
   def show
-    tutorial = Tutorial.find(params[:id])
-    @facade = TutorialFacade.new(tutorial, params[:video_id])
-    if @facade.current_video
-
+    @tutorial = Tutorial.find(params[:id])
+    @facade = TutorialFacade.new(@tutorial, params[:video_id])
+    if current_user.admin?
+      @facade
     else
-      flash[:error] = "Sorry, This tutorial is empty"
-      redirect_to root_path
+      if @facade.current_video
+
+      else
+        flash[:error] = "Sorry, This tutorial is empty"
+        redirect_to root_path
+      end
     end
   end
 end
