@@ -72,6 +72,7 @@ describe 'vister can create an account', :js do
       expect(page).to_not have_content('Sign In')
     end
   end
+
   describe 'sad path user regestration' do
     it 'cannot register with existing user email' do
       create(:user, email: 'timmy@gmail.com')
@@ -90,6 +91,7 @@ describe 'vister can create an account', :js do
 
       expect(page).to have_content('Username already exists')
     end
+
     it 'cannot register with mismatched password' do
       email = 'timmy@gmail.com'
       first_name = 'Jim'
