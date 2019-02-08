@@ -8,6 +8,7 @@ require 'rspec/rails'
 require 'vcr'
 require 'webmock/rspec'
 require 'omniauth-github'
+require 'capybara/email/rspec'
 
 VCR.configure do |config|
   config.ignore_localhost = true
