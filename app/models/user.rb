@@ -21,4 +21,10 @@ class User < ApplicationRecord
       friend.uid == friend_uid
     end
   end
+
+  def friends_list
+    friendships.map do |friendship|
+      User.find(friendship.id)
+    end
+  end
 end
