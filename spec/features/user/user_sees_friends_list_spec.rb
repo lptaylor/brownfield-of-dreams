@@ -21,8 +21,6 @@ describe User do
       end
     end
 
-    save_and_open_page
-    binding.pry
     within '.friends' do
       expect(page).to have_content(@user_1.github_username)
     end
