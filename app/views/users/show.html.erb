@@ -15,6 +15,14 @@
       </div>
     <% end %>
   </section>
+  <div class="friends">
+    <h2>Friends List</h2>
+      <% @user.friends_list.each do |friend| %>
+      <div id="friend">
+        <p>Your friend: <%= friend.github_username %></p>
+      </div>
+      <% end %>
+  </div>
 
     <% if @user.token %>
     <div class="github">

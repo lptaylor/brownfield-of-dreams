@@ -72,4 +72,39 @@ describe 'vister can create an account', :js do
       expect(page).to_not have_content('Sign In')
     end
   end
+  describe 'sad path user regestration' do
+    it 'cannot register with existing user email' do
+      create(:user, email: 'timmy@gmail.com')
+      email = 'timmy@gmail.com'
+      first_name = 'Jim'
+      last_name = 'Bob'
+      password = 'password'
+
+      visit register_path
+      fill_in 'user[email]', with: email
+      fill_in 'user[first_name]', with: first_name
+      fill_in 'user[last_name]', with: last_name
+      fill_in 'user[password]', with: password
+      fill_in 'user[password_confirmation]', with: password
+      click_on'Create Account'
+
+      expect(page).to have_content('Username already exists')
+    end
+    it 'cannot register with mismatched password' do
+      email = 'timmy@gmail.com'
+      first_name = 'Jim'
+      last_name = 'Bob'
+      password = 'password'
+
+      visit register_path
+      fill_in 'user[email]', with: email
+      fill_in 'user[first_name]', with: first_name
+      fill_in 'user[last_name]', with: last_name
+      fill_in 'user[password]', with: password
+      fill_in 'user[password_confirmation]', with: 'ddaf'
+      click_on'Create Account'
+
+      expect(page).to have_content("Passwords don't match")
+    end
+  end
 end
