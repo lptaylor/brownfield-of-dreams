@@ -22,4 +22,30 @@ RSpec.describe User, type: :model do
       expect(admin.admin?).to be_truthy
     end
   end
+
+  describe 'instance methods' do
+    it 'starts with no friends' do
+      user = create(:user)
+
+      expect(user.friends.count).to eq(0)
+    end
+
+    it 'add_friend' do
+      user = create(:user)
+      user_2 = create(:user, uid: 111, email: 'tim@gmail.com')
+
+      user.add_friend(user_2.uid)
+
+      expect(user.friends[0].email).to eq(user_2.email)
+    end
+
+    it 'already_friends?' do
+      user = create(:user)
+      user_2 = create(:user, uid: 111, email: 'tim@gmail.com')
+
+      user.add_friend(user_2.uid)
+
+      expect(user.already_friends?(user_2.uid)).to be true
+    end
+  end
 end
