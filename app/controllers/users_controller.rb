@@ -12,10 +12,10 @@ class UsersController < ApplicationController
       flash[:error] = "Passwords don't match"
       redirect_to register_path
     else
-      user = User.create(user_params)
-      if user.save
-        session[:user_id] = user.id
-        flash[:alert] = "Logged in as #{user.first_name} #{user.last_name}"
+      @user = User.create(user_params)
+      if @user.save
+        session[:user_id] = @user.id
+        flash[:alert] = "Logged in as #{@user.first_name} #{@user.last_name}"
         flash[:notice] = "This account has not yet been activated. Please check your email."
         ConfirmationMailer.success(current_user).deliver_now
         redirect_to dashboard_path
