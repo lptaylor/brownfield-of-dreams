@@ -37,7 +37,7 @@
           <div id="github_followers-<%= follower.id %>">
             <%= link_to follower.handle, follower.html_url %>
             <% if follower.exists? %>
-              <%= link_to "Follow This User", create_follower_path %>
+              <%= button_to "Follow This User", new_friendship_path(:friend_uid => follower.id) %>
             <% end %>
           </div>
         <% end %>
@@ -51,7 +51,7 @@
           <div id="github_following-<%= followed.id %>">
             <%= link_to followed.handle, followed.html_url %>
             <% if followed.exists? %>
-              <%= link_to "Follow This User", create_follower_path %>
+              <%= button_to "Follow This User", new_friendship_path(:friend_uid => followed.id) %>
             <% end %>
           </div>
         <% end %>
