@@ -50,4 +50,23 @@ describe 'as a user' do
     end
     expect(page).to have_content("You are now Friends!")
   end
+
+  xdescribe 'invalid user ' do
+    it 'returns an error message when invalid user' do
+      current_user = create(:user, token: ENV['GIT_HUB_PLACEHOLDER_KEY'])
+      user_1 = UserPresenter.new(current_user)
+      user_2 = create(:user)
+      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user_1)
+      visit dashboard_path
+
+      within '.github' do
+        within "#github_following-#{user_1.github_following[1].id}" do
+          click_button("Follow This User")
+          expect(current_path).to eq(dashboard_path)
+          save_and_open_page
+        end
+      end
+      expect(page).to have_content("Not a Valid User")
+    end
+  end
 end
